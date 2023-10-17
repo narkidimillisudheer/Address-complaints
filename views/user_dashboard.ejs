@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
+        <style>
+            body{
+                margin:0px;
+                border:0px;
+                gap:6rem;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            #topbar{
+                display: flex;
+                flex-direction: row;
+                align-items:flex-end;
+                justify-content: space-between;
+                
+            }
+            #lefttop{
+                display:flex;
+                flex-direction:row;
+                align-items:flex-end; 
+            }
+            #pre1, #span1{
+                font-size: large;
+                font-weight:bold;
+            }
+            #sidebar{
+                color:rgb(52, 47, 47);
+                background-color: white;
+                display:flex;;
+                flex-direction:column;
+                height:450px;
+                width:300px;
+                border-radius:5px;
+                box-shadow: 5px 5px 20px;
+            }
+            .divT{
+                display:flex;
+                flex-direction: row;
+                width:98vw;
+                height:max-content;
+                flex-wrap: wrap;
+                gap:5rem;
+                /*justify-content: flex-start;*/
+            }
+            a{
+                text-decoration: none;
+                color:rgb(52, 47, 47);
+            }
+            #span1{
+                cursor: pointer;
+            }
+           #bone,#btwo,#btre,#bfour,#bfive{
+                margin-top:10px;
+                height:100px;
+                width:210px;
+                display: flex;
+                flex-direction: column;
+                border: 1px black;
+                border-radius: 10px;
+                text-align: center;
+                justify-content: center;
+            }
+            #content{                
+                display:flex;
+                /*flex-direction:row;*/
+                gap:3rem;
+                flex-wrap: wrap;
+                width:750px;
+                height:200px;
+            }
+            #boxText{
+                color:white;
+                font-size: larger;
+            }
+            #cpre{
+                line-height: 1.5px;
+            }
+            #contact{
+            float:bottom;
+          }
+            /* @media screen and (max-width: 768px) {
+            #content {
+                width: 100%;
+            }
+
+            .divT {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+            }
+
+            #topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #lefttop {
+                margin-top: 10px;
+            }
+
+            #pre1 {
+                margin-bottom: 10px;
+            }
+
+            #bone,
+            #btwo,
+            #btre,
+            #bfour,
+            #bfive {
+                flex: 0 1 calc(50% - 20px);
+            }
+        } */
+        </style>
+    </head>
+    <body>
+        <div class="main">
+        <div id="topbar">
+            <img src="https://www.vishnu.edu.in/upload_news/newlogo.bmp" width="60px" height="60px">
+            <div id="lefttop">
+            <pre id="pre1"><%= name %></pre>&nbsp;&nbsp;&nbsp;
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="60px" height="60px">
+            </div>
+            </div>
+            <br>
+            <div class="divT">
+        <div style="margin-left:5px; margin-top: 8px;" id="sidebar">
+           <p>&nbsp;&nbsp;<i class="fa fa-dashboard" style="font-size:20px"></i>&nbsp; &nbsp;<span id="span1"><a href="/user/dashboard">Dashboard</a></span></p>
+            <br>
+            <hr style="width:290px; float:left;margin-top:-15px;">
+            <p>&nbsp;&nbsp;<i class="fa-solid fa-pen-to-square" style="font-size:20px"></i>&nbsp;&nbsp;<span id="span1"><a href="/userComplaint">Register Complaint</a></span></p>
+            <br>
+            <hr style="width:290px; float:left;margin-top:-15px;">
+            <p>&nbsp;&nbsp;<i class="fa fa-history" aria-hidden="true" style="font-size:20px"></i>&nbsp;&nbsp;<span id="span1"><a href="/complaintHistory">Complaints History</a></span></p>
+            <br>
+            <hr style="width:290px; float:left;margin-top:-15px;">
+            <p>&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true" style="font-size:20px"></i>&nbsp;&nbsp;<span id="span1"><a href="contact">Contact Us</a></span></p>
+            <br>
+            <hr style="width:290px; float:left;margin-top:-15px;">
+            <p>&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true" style="font-size:20px"></i>&nbsp;&nbsp;<span id="span1"><a href="/logout">Logout</a></span></p>
+            <br>
+            <hr style="width:290px; float:left;margin-top:-15px;">
+            
+        </div>
+        <div id="content">
+            <div style="background-color:rgb(2, 2, 193);" id="bone">
+            <p id="boxText">TOTAL</p>
+            <span id="boxText"><%= total %></span>
+            </div>
+            <div style="background-color:rgb(151, 103, 12);"id="btwo">
+                <p id="boxText">Not Processed Yet</p>
+                <span id="boxText"><%= openComplaints %></span>
+                </div>
+            <div style="background-color:green;"id="btre">
+            <p id="boxText">In Process</p>
+            <span id="boxText"><%= process %></span>
+            </div>
+            <div style="background-color:rgb(229, 58, 58);"id="bfour">
+            <p id="boxText">Declined</p>
+            <span id="boxText">0</span>
+            </div>
+            <div style="background-color:rgb(2, 2, 193);"id="bfive">
+            <p id="boxText">Closed</p>
+            <span id="boxText"><%= completed %></span>
+            </div>
+        </div>
+        </div>
+        <center>
+        <div id="contact">
+            <h5>Contact address</h5>
+            <pre id="cpre">email us at: vcomplaints@vishnu.edu.in</pre>
+            <pre id="cpre">visit us at: <i>student affairs Office, Block-A, VITB</i></pre>      
+        </center>      
+        </div>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"></script>
+      <% if(locals.popup){ %>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+      title: 'login',
+      text: 'your logged in succesfully',
+      icon: 'success',
+    });
+  });
+</script>
+    <% } %>
+    </body>
+</html>

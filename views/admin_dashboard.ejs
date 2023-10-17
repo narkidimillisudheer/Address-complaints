@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    #custom-table{
+            width: auto;
+            text-align: center;
+        }
+        th, td {
+             padding: 10px;
+        }
+
+        /* styles.css */
+        .open{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:20px;
+            width: 90px;
+            background-color:blue;
+            color: white;
+        }
+        .closed{
+            color: green;
+        }
+  </style>
+</head>
+<body>
+<table border="2" id="cutom-table">
+    <thead>
+        <tr>
+            <th>Serial number</th>
+            <th>creationTime</th>
+            <th>Username</th>
+            <th>Institution Name</th>
+            <th>area</th>
+          <th>complaint</th>
+          <th>Explanation</th>
+          <th>status</th>
+          <th>change status</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% let serialNumber = 1; %>
+        <% for (const complaint of complaints) { %>
+            <tr>
+                <td><%= serialNumber %></td>
+                <td><%= complaint.creationTime %></td>
+                <td><%= complaint.username %></td>
+                <td><%=complaint.INtName %></td>
+                <td><%=complaint.area %></td>
+                <td><%=complaint.complaint %></td>
+                <td><%=complaint.explain %></td>
+                <td ><span class="<%= complaint.status %>"><%= complaint.status %></span></td>
+                <!-- Other table data -->
+              <!-- <td>
+          <button onclick="updateStatus('<%= complaint.id %>', 'In progress')">In progress</button>
+          <button onclick="updateStatus('<%= complaint.id %>','completed')">Completed</button>
+                </td> -->
+              <td>
+                    <!-- "Open" Button -->
+                    <form action="/admin/update-status/<%= complaint.id %>?status=process" method="POST">
+                        <button type="submit"<% if (complaint.status === 'process') { %>disabled<% } %>>process</button>
+                    </form>
+                </td>
+                <td>
+                    <!-- "Completed" Button -->
+                    <form action="/admin/update-status/<%= complaint.id %>?status=completed" method="POST">
+                        <button type="submit">Completed</button>
+                    </form>
+                </td>
+            </tr>
+            <% serialNumber++; %>
+        <% } %>
+    </tbody>
+</table>
+</body>
+</html>

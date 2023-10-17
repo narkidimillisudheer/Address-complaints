@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            width: 100vw;
+            position: relative;
+        }
+
+        .image1 {
+            width: 100%;
+            max-height: 40vh;
+            opacity: 0.8;
+        }
+
+        .image2 {
+            position: absolute;
+            top: 1%;
+            left: 0%;
+            z-index: 2;
+            width: 20%;
+            max-width: 100px;
+        }
+
+        #head {
+            position: absolute;
+            top: 40%;
+            left: 0%;
+            z-index: 3;
+            font-size: 3vw;
+            color: brown;
+            background-color: aliceblue;
+            padding: 1vw;
+            border-radius: 10px;
+        }
+
+        #btn {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            z-index: 3;
+            text-align: right;
+        }
+
+        #page {
+            text-decoration: none;
+            color: white;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            font-size: 2vw;
+            margin-right: 2vw;
+            margin-left: 2vw;
+        }
+
+        #btn1 {
+            background-color: #326fb0;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        #fourth {
+            /* background-color: #f0f0f0; */
+            /* padding: 20px; */
+            box-shadow: 5px 5px 20px;
+            font-size: 150%;
+
+        }
+        ul{
+            color:rgb(21, 20, 20);
+
+        }
+        #line{
+            box-shadow: 5px 5px 20px;
+            margin-top:-3vh;
+        }
+        #res{
+            color:brown;
+        }
+        h4{
+            margin-bottom: 0px;
+        }
+        #cpre{
+            line-height: 4px;
+        }
+        #list{
+            /* display:flex; */
+            border: 0px solid black;
+            width:100vw;
+            height:220px;
+            border-radius:20px;
+            margin-left:15%;
+            background:linear-gradient(to right, #d7d1cb, #ffffff); 
+
+        }
+        ul{
+            border:1px solid black;
+            border-radius: 20px;
+            background:linear-gradient(to right, #d7d1cb, #ffffff); 
+            /* margin-left:-10%; */
+
+        }
+        h3{
+            text-align: center;
+            margin-top:0.5%;
+        }
+        li{
+            list-style:circle;
+        }
+        #list-container {
+            display: flex; 
+            flex-direction: row;
+            gap:6rem;
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px; 
+         }
+
+        .list-item {
+            list-style: circle;
+            flex: 1;
+            padding: 0 10px; 
+        }
+
+        #list-image {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://www.integrify.com/site/assets/files/7209/complaint-handling-software.jpg" class="image1" alt="Image 1">
+        <img src="https://vishnu.edu.in/upload_news/newlogo.bmp" class="image2" alt="Image 2">
+        <div id="head"><b>AddressIssue</b></div>
+        <div id="btn">
+            <button id="btn1" type="button"> <a id="page" href="/signup">Sign-up</a></button>&nbsp;&nbsp;
+            <button id="btn1" type="button"> <a href="/login" id="page">Login</a> </button>&nbsp;&nbsp;
+            <button id="btn1" type="button"><a href="/adminlogin" id="page">For Admin</a></button>
+        </div>
+    </div>
+<div id="fourth">
+    <center id="line">
+        <h2 id="res">We resolve your issues in the campus premises!</h2>
+    </center>
+    <div id="list-container">
+        <ul>
+            <h4 style="color:rgb(183, 46, 46)">One way to address your complaints in:</h4>
+            <li class="list-item">College Compound</li>
+            <li class="list-item">Classes</li>
+            <li class="list-item">Labs</li>
+            <li class="list-item">Other open areas</li>
+        </ul>
+
+        <div id="list-image">
+            <img src="https://imgs.search.brave.com/wchfN3jhw0kZMTeYeqvOaojGj-I-htirng-G7GD8cU8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aW50ZWdyaWZ5LmNv/bS9zaXRlL2Fzc2V0/cy9maWxlcy83MjEy/L2FnZW50LWhhbmRs/aW5nLWNvbXBsYWlu/dC5wbmc" width="200px" height="200px">
+        </div>
+    </div>
+</div>
+
+   <h3 style="color:brown; font-size: 240%;">"Sign-up and gear-up to register your complaints."</h3> 
+    <center>
+        <div style="margin-top:-10px;" id="contact">
+            <h5><u>Contact address</u></h5>
+            <pre id="cpre">email us at: vcomplaints@vishnu.edu.in</pre>
+            <pre id="cpre">visit us at: <i>student affairs Office, Block-A, VITB</i></pre>   
+            </div>   
+        </center>    
+</body>
+</html>
